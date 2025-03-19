@@ -10,7 +10,6 @@ import {
   Container,
   Typography,
   TextField,
-  Button,
   Grid,
   IconButton,
   Snackbar,
@@ -20,7 +19,7 @@ import {
 import { styled } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -63,7 +62,7 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
 const Contact: React.FC = () => {
   // Theme instance
   const theme = useTheme();
-  
+
   // Form state
   const [formData, setFormData] = useState({
     name: '',
@@ -84,19 +83,19 @@ const Contact: React.FC = () => {
     {
       icon: <EmailIcon />,
       title: 'Email',
-      content: 'contact@example.com',
-      link: 'mailto:contact@example.com',
+      content: 'markanthonymatuguina23@gmail.com',
+      link: 'markanthonymatuguina23@gmail.com',
     },
     {
       icon: <PhoneIcon />,
       title: 'Phone',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      content: '+639 366 684 9967',
+      link: '+639 366 684 9967',
     },
     {
       icon: <LocationOnIcon />,
       title: 'Location',
-      content: 'San Francisco, CA',
+      content: 'San Juan City, Philippines',
       link: 'https://maps.google.com',
     },
   ];
@@ -106,17 +105,17 @@ const Contact: React.FC = () => {
     {
       icon: <GitHubIcon />,
       label: 'GitHub',
-      url: 'https://github.com/example',
+      url: 'https://github.com/rinkpanger7700',
     },
     {
       icon: <LinkedInIcon />,
       label: 'LinkedIn',
-      url: 'https://linkedin.com/in/example',
+      url: 'https://www.linkedin.com/in/mark-matuguina/',
     },
     {
-      icon: <TwitterIcon />,
+      icon: <FacebookIcon />,
       label: 'Twitter',
-      url: 'https://twitter.com/example',
+      url: 'https://www.facebook.com/duckymomo.23',
     },
   ];
 
@@ -164,18 +163,14 @@ const Contact: React.FC = () => {
           >
             Get in Touch
           </Typography>
-          <Typography
-            variant="h5"
-            color="text.secondary"
-            sx={{ maxWidth: '800px', mx: 'auto' }}
-          >
+          <Typography variant="h5" color="text.secondary" sx={{ maxWidth: '800px', mx: 'auto' }}>
             Feel free to reach out for collaborations or just a friendly chat
           </Typography>
         </Box>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} alignItems="stretch" alignContent={{ xs: 'center', md: 'flex-start' }}>
           {/* Contact Information */}
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} alignContent={{ xs: 'center', md: 'flex-start' }}>
             <ContactCard>
               <Typography
                 variant="h5"
@@ -211,9 +206,9 @@ const Contact: React.FC = () => {
                         component="a"
                         href={info.link}
                         color="text.secondary"
-                        sx={{ 
+                        sx={{
                           textDecoration: 'none',
-                          '&:hover': { color: theme.palette.primary.main }
+                          '&:hover': { color: theme.palette.primary.main },
                         }}
                       >
                         {info.content}
@@ -236,12 +231,12 @@ const Contact: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      sx={{ 
+                      sx={{
                         color: theme.palette.text.secondary,
-                        '&:hover': { 
+                        '&:hover': {
                           color: theme.palette.primary.main,
-                          backgroundColor: 'rgba(144, 202, 249, 0.08)'
-                        }
+                          backgroundColor: 'rgba(144, 202, 249, 0.08)',
+                        },
                       }}
                     >
                       {social.icon}
@@ -254,7 +249,7 @@ const Contact: React.FC = () => {
 
           {/* Contact Form */}
           <Grid item xs={12} md={8}>
-            <ContactCard>
+            {/* <ContactCard>
               <Typography 
                 variant="h5" 
                 component="h3" 
@@ -328,21 +323,13 @@ const Contact: React.FC = () => {
                   </Grid>
                 </Grid>
               </form>
-            </ContactCard>
+            </ContactCard> */}
           </Grid>
         </Grid>
 
         {/* Success/Error Snackbar */}
-        <Snackbar
-          open={snackbar.open}
-          autoHideDuration={6000}
-          onClose={handleSnackbarClose}
-        >
-          <Alert
-            onClose={handleSnackbarClose}
-            severity={snackbar.severity}
-            sx={{ width: '100%' }}
-          >
+        <Snackbar open={snackbar.open} autoHideDuration={6000} onClose={handleSnackbarClose}>
+          <Alert onClose={handleSnackbarClose} severity={snackbar.severity} sx={{ width: '100%' }}>
             {snackbar.message}
           </Alert>
         </Snackbar>
@@ -351,4 +338,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
